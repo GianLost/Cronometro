@@ -16,23 +16,23 @@ export default class App extends Component {
   render() {
 
     return (
-      <View style={{ backgroundColor:'white', alignContent: 'center', alignItems: 'center', marginTop: 40, height:1000 }}>
+      <View style={style.pView}>
 
         <View>
-          <Text style={{fontSize:40, color: 'black'}}>Cronômetro</Text>
+          <Text style={style.titleView}>Cronômetro</Text>
         </View>
 
-        <View style={{}}>
-          <Text style={{fontSize:30, marginTop: 30, borderColor: 'black', borderWidth: 3, width: 300, textAlign: 'center', color: 'black'}}>0m.0s</Text>
+        <View>
+          <Text style={style.counterText}>0m.0s</Text>
         </View>
 
-        <View style={{border: 'black', margin: 30, flexDirection: 'row'}}>
-          <TouchableOpacity style={{backgroundColor:'lightgreen', marginRight: 50, width: 100, height:40, borderRadius:50}}>
-            <Text style={{fontSize:20,textAlign: 'center', marginTop:5, color: 'white'}}>Start</Text>
+        <View style={style.buttonView}>
+          <TouchableOpacity style={style.firstButton}>
+            <Text style={style.textButton}>Start</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={{backgroundColor:'lightgreen', width: 100, height:40, borderRadius:50}}>
-            <Text style={{fontSize:20,textAlign: 'center', marginTop:5, color: 'white'}}>Stop</Text>
+          <TouchableOpacity style={style.secondButton}>
+            <Text style={style.textButton}>Stop</Text>
           </TouchableOpacity>
         </View>
 
@@ -40,3 +40,56 @@ export default class App extends Component {
     )
   }
 }
+
+const style = StyleSheet.create({
+
+  pView: {
+    backgroundColor:'white', 
+    alignContent: 'center', 
+    alignItems: 'center', 
+    marginTop: 40, 
+    height:1000
+  },
+
+  titleView: {
+    fontSize:40, color: 'black'
+  },
+
+  counterText:{
+    fontSize:30, 
+    marginTop: 30, 
+    borderColor: 'black', 
+    borderWidth: 3, 
+    width: 300, 
+    textAlign: 'center', 
+    color: 'black'
+  },
+
+  buttonView: {
+    border: 'black', 
+    margin: 30, 
+    flexDirection: 'row'
+  },
+
+  firstButton: {
+    backgroundColor:'lightgreen',  
+    width: 100, 
+    marginRight:50,
+    height:40, 
+    borderRadius:50
+  },
+
+  secondButton: {
+    backgroundColor:'lightgreen', 
+    width: 100, 
+    height:40, 
+    borderRadius:50
+  },
+
+  textButton: {
+    fontSize:20,
+    textAlign: 'center', 
+    marginTop:5, 
+    color: 'white'
+  }
+})
